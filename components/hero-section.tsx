@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ArrowRight, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -7,6 +9,9 @@ import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
 import LogoCloud from './logo-cloud'
+import { AnimatePresence, motion } from 'motion/react'
+
+
 
 const transitionVariants = {
     item: {
@@ -29,6 +34,18 @@ const transitionVariants = {
 } as const
 
 export default function HeroSection() {
+    const [botName, setBotName] = useState("Moltbot")
+
+    useEffect(() => {
+        const bots = ["Moltbot", "OpenClaw", "Clawdbot"]
+        let index = 0
+        const interval = setInterval(() => {
+            index = (index + 1) % bots.length
+            setBotName(bots[index])
+        }, 5000)
+        return () => clearInterval(interval)
+    }, [])
+
     return (
         <>
             <HeroHeader />
@@ -86,9 +103,9 @@ export default function HeroSection() {
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <AnimatedGroup variants={transitionVariants}>
                                     <Link
-                                        href="#link"
+                                        href="#booking"
                                         className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-                                        <span className="text-foreground text-sm">Introducing Support for AI Models</span>
+                                        <span className="text-foreground text-sm">Next-Gen Agent Infrastructure</span>
                                         <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
                                         <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
@@ -104,21 +121,32 @@ export default function HeroSection() {
                                     </Link>
                                 </AnimatedGroup>
 
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    as="h1"
-                                    className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                                    Modern Solutions for Customer Engagement
-                                </TextEffect>
+                                <h1 className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
+                                    Get a Virtual Employee with
+                                    <span className="block text-primary h-[1.2em] overflow-hidden">
+                                        <AnimatePresence mode="wait">
+                                            <motion.span
+                                                key={botName}
+                                                initial={{ y: 20, opacity: 0 }}
+                                                animate={{ y: 0, opacity: 1 }}
+                                                exit={{ y: -20, opacity: 0 }}
+                                                transition={{ duration: 0.3 }}
+                                                className="block"
+                                            >
+                                                {botName}
+                                            </motion.span>
+                                        </AnimatePresence>
+                                    </span>
+                                </h1>
+
                                 <TextEffect
                                     per="line"
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     delay={0.5}
                                     as="p"
-                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                                    Highly customizable components for building modern websites and applications that look and feel the way you mean it.
+                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
+                                    We host it. We connect it. We keep it running. All the power of OpenClaw with zero of the maintenance overhead.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -133,29 +161,23 @@ export default function HeroSection() {
                                         },
                                         ...transitionVariants,
                                     }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
+                                    className="mt-12 flex flex-col items-center justify-center gap-4">
                                     <div
                                         key={1}
                                         className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
                                         <Button
                                             asChild
                                             size="lg"
-                                            className="rounded-xl px-5 text-base">
-                                            <Link href="#link">
-                                                <span className="text-nowrap">Start Building</span>
+                                            className="rounded-xl px-8 text-base shadow-lg shadow-primary/25">
+                                            <Link href="#booking">
+                                                <span className="text-nowrap font-semibold">Book a Growth Call</span>
+                                                <ArrowRight className="ml-2 size-4" />
                                             </Link>
                                         </Button>
                                     </div>
-                                    <Button
-                                        key={2}
-                                        asChild
-                                        size="lg"
-                                        variant="ghost"
-                                        className="h-10.5 rounded-xl px-5">
-                                        <Link href="#link">
-                                            <span className="text-nowrap">Request a demo</span>
-                                        </Link>
-                                    </Button>
+                                    <span className="text-sm text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1000 fill-mode-both">
+                                        Tell us your use case. We’ll recommend a setup and share a quote instantly.
+                                    </span>
                                 </AnimatedGroup>
                             </div>
                         </div>

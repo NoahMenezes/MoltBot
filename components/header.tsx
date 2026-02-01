@@ -9,8 +9,8 @@ import { ModeToggle } from './mode-toggle'
 
 const menuItems = [
     { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Content', href: '#content' },
+    { name: 'Why Us', href: '#content' },
+    { name: 'FAQ', href: '#faq' },
 ]
 
 export const HeroHeader = () => {
@@ -80,27 +80,9 @@ export const HeroHeader = () => {
                                 <ModeToggle />
                                 <Button
                                     asChild
-                                    variant="outline"
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="/login">
-                                        <span>Login</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled && 'lg:hidden')}>
-                                    <Link href="/signup">
-                                        <span>Sign Up</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="/signup">
-                                        <span>Get Started</span>
+                                    size="sm">
+                                    <Link href="#booking">
+                                        <span>Book a Call</span>
                                     </Link>
                                 </Button>
                             </div>
