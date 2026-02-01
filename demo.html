@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moltbot | Modern Virtual Employee Hosting</title>
+    <meta name="description"
+        content="Managed hosting for OpenClaw, Moltbot, and Clawdbot. We host it, connect it, and keep it running. Zero setup, bring your own AI keys.">
+
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            /* Color Palette - Premium Dark Mode */
+            --bg-color: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --accent-primary: #6366f1;
+            /* Indigo */
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --gradient-1: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+
+            /* Spacing */
+            --section-padding: 100px 20px;
+            --max-width: 1100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Ambient Background Glows */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .glow-1 {
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            filter: blur(80px);
+        }
+
+        .glow-2 {
+            position: absolute;
+            bottom: -10%;
+            left: -10%;
+            width: 40%;
+            height: 40%;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
+            filter: blur(80px);
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 20px 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 13px;
+            color: var(--accent-primary);
+            margin-bottom: 24px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 76px);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .rotating-text {
+            color: var(--accent-primary);
+            display: inline-block;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.6);
+        }
+
+        .microcopy {
+            display: block;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 16px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: var(--section-padding);
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 32px;
+            border-radius: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--accent-primary);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .quote {
+            font-size: 16px;
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-info span {
+            display: block;
+            font-size: 14px;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .author-role {
+            color: var(--text-secondary);
+        }
+
+        /* Features */
+        .features {
+            padding: var(--section-padding);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent-glow);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .feature-content p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Why Us / Pain Points */
+        .why-us {
+            padding: var(--section-padding);
+            background: rgba(3, 7, 18, 0.5);
+        }
+
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .pain-list {
+            list-style: none;
+            margin-top: 32px;
+        }
+
+        .pain-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: #ef4444;
+            font-weight: 500;
+        }
+
+        .solution-list {
+            list-style: none;
+            margin-top: 32px;
+        }
+
+        .solution-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            color: #10b981;
+            font-weight: 500;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: var(--section-padding);
+        }
+
+        .faq-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 24px 24px;
+            max-height: 300px;
+        }
+
+        .faq-item.active i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 32px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @media (max-width: 968px) {
+            .split-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ambient-glow">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+    </div>
+
+    <header id="header">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">Moltbot</a>
+                <a href="#booking" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">Book a Call</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero container">
+        <div class="animate-up">
+            <div class="badge">Next-Gen Agent Infrastructure</div>
+            <h1>Get a Virtual Employee with <br> <span class="rotating-text" id="bot-name">Moltbot</span></h1>
+            <p>We host it. We connect it. We keep it running. All the power of OpenClaw with zero of the maintenance
+                overhead.</p>
+
+            <a href="#booking" class="btn btn-primary">
+                Book a Growth Call
+                <i data-lucide="arrow-right" style="margin-left: 8px; width: 20px;"></i>
+            </a>
+            <span class="microcopy">Tell us your use case. We’ll recommend a setup and share a quote instantly.</span>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Loved by fast-moving teams</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="quote">“We wanted OpenClaw, not a DevOps side-quest. Scaling our agent fleet used to take
+                        days; with Moltbot, it's just a call away. This just worked.”</p>
+                    <div class="author">
+                        <div class="author-info">
+                            <span class="author-name">Alex Rivera</span>
+                            <span class="author-role">Founder, Stealth Startup</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">“The monitoring + quick fixes mattered more than the bot itself. Seeing logs and
+                        having auto-restarts saved us from silent downtime on more than one occasion.”</p>
+                    <div class="author">
+                        <div class="author-info">
+                            <span class="author-name">Sarah Chen</span>
+                            <span class="author-role">Ops Director, Fintech Lab</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="quote">“We run complex multi-channel automations across Slack and WhatsApp without the
+                        whole system collapsing. The best best-effort support in the game.”</p>
+                    <div class="author">
+                        <div class="author-info">
+                            <span class="author-name">James Miller</span>
+                            <span class="author-role">Growth Lead, RevOps Inc.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="features container">
+        <div class="section-header">
+            <h2>What you’re actually getting</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Beyond simple code. We provide
+                the stability layer your business agents need.</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon"><i data-lucide="server"></i></div>
+                <div class="feature-content">
+                    <h3>Managed VM Hosting</h3>
+                    <p>We deploy and maintain the entire instance. No more local machine dependencies or terminal
+                        errors.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i data-lucide="activity"></i></div>
+                <div class="feature-content">
+                    <h3>Monitoring + Auto-restart</h3>
+                    <p>Our infrastructure watches your bot 24/7. If it hangs or crashes, we restart it before you even
+                        notice.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i data-lucide="database"></i></div>
+                <div class="feature-content">
+                    <h3>Backups + Logs</h3>
+                    <p>Centralized logs for every interaction and automated snapshotting so recovery is always 5 minutes
+                        away.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+                <div class="feature-content">
+                    <h3>Safe Update Flow</h3>
+                    <p>We test upstream changes before pulling. No more random breaking updates that kill your workflow.
+                    </p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i data-lucide="key-round"></i></div>
+                <div class="feature-content">
+                    <h3>Bring Your Own Keys</h3>
+                    <p>You control the intelligence. Plug in your OpenAI or Anthropic keys. Zero platform lock-in.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon"><i data-lucide="message-square"></i></div>
+                <div class="feature-content">
+                    <h3>Multi-Channel Support</h3>
+                    <p>Connect your employee to WhatsApp, Telegram, Slack, or Discord with a few clicks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us">
+        <div class="container">
+            <div class="split-section">
+                <div>
+                    <h2>Why choose us?</h2>
+                    <p style="color: var(--text-secondary); margin-top: 16px;">Because OpenClaw isn’t the hard part.
+                        **Reliability is.** Most DIY setups fail for boring reasons that eat your time.</p>
+                    <ul class="pain-list">
+                        <li><i data-lucide="x-circle"></i> Session drops & login loops</li>
+                        <li><i data-lucide="x-circle"></i> Updates break custom configs</li>
+                        <li><i data-lucide="x-circle"></i> Heavy tasks kill the server</li>
+                        <li><i data-lucide="x-circle"></i> No alerts when the bot stops replying</li>
+                    </ul>
+                </div>
+                <div
+                    style="background: var(--glass-bg); padding: 40px; border-radius: 32px; border: 1px solid var(--glass-border);">
+                    <h3 style="margin-bottom: 20px;">We've already fought those battles.</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 24px;">Instead of spending nights debugging
+                        "why it stopped replying", you get a virtual employee that stays online—with humans to call when
+                        things get messy.</p>
+                    <ul class="solution-list">
+                        <li><i data-lucide="check-circle-2"></i> Hardened infra tested at scale</li>
+                        <li><i data-lucide="check-circle-2"></i> Proactive stability defaults</li>
+                        <li><i data-lucide="check-circle-2"></i> Humans available for support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="features container">
+        <div class="section-header">
+            <h2>The Onboarding Process</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px;">
+            <div style="text-align: center;">
+                <h4 style="color: var(--accent-primary); font-size: 32px; margin-bottom: 12px;">1</h4>
+                <p><strong>Deploy</strong><br>We provision your VM with stability defaults.</p>
+            </div>
+            <div style="text-align: center;">
+                <h4 style="color: var(--accent-primary); font-size: 32px; margin-bottom: 12px;">2</h4>
+                <p><strong>Connect</strong><br>WhatsApp, Slack, Telegram, or custom webhooks.</p>
+            </div>
+            <div style="text-align: center;">
+                <h4 style="color: var(--accent-primary); font-size: 32px; margin-bottom: 12px;">3</h4>
+                <p><strong>Enable</strong><br>Draft, research, automate browser tasks.</p>
+            </div>
+            <div style="text-align: center;">
+                <h4 style="color: var(--accent-primary); font-size: 32px; margin-bottom: 12px;">4</h4>
+                <p><strong>Maintain</strong><br>Uptime, logs, backups, and proactive alerts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq container">
+        <div class="section-header">
+            <h2>Common Questions</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <div class="faq-question">Is this official OpenClaw hosting? <i data-lucide="chevron-down"></i></div>
+                <div class="faq-answer">No. We provide managed hosting and expert setup as an agency service. We help
+                    you run open-source models at a professional grade.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you provide AI tokens? <i data-lucide="chevron-down"></i></div>
+                <div class="faq-answer">No. You bring your own AI keys (Anthropic, OpenAI, etc). This ensures you have
+                    full control over your data and prevents vendor lock-in.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How lang does setup take? <i data-lucide="chevron-down"></i></div>
+                <div class="faq-answer">Typically 24–72 hours depending on the complexity of your channels and required
+                    custom skill integrations.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I leave later? <i data-lucide="chevron-down"></i></div>
+                <div class="faq-answer">Absolutely. We are anti-lock-in. If you decide to move to your own infra later,
+                    we’ll help migrate your setup.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="booking"
+        style="padding: 100px 20px; text-align: center; background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 70%);">
+        <div class="container animate-up">
+            <h2 style="font-size: 48px; margin-bottom: 24px;">Ready to deploy your first agent?</h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px;">Stop debugging. Start
+                executing. Let us handle the infrastructure while you focus on the growth.</p>
+            <a href="#" class="btn btn-primary" style="padding: 18px 48px; font-size: 18px;">Book a Discovery Call</a>
+            <span class="microcopy">We’ll map your needs → recommend a setup → send a quote.</span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Agency Info</a>
+            </div>
+            <p class="copyright">© 2026 Moltbot Agency. Not affiliated with OpenClaw or Anthropic. Managed Hosting
+                Service.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Rotating Text (Flip)
+        const bots = ["Moltbot", "OpenClaw", "Clawdbot"];
+        let counter = 0;
+        const textElement = document.getElementById('bot-name');
+
+        setInterval(() => {
+            textElement.style.opacity = '0';
+            textElement.style.transform = 'translateY(10px)';
+
+            setTimeout(() => {
+                counter = (counter + 1) % bots.length;
+                textElement.innerText = bots[counter];
+                textElement.style.opacity = '1';
+                textElement.style.transform = 'translateY(0)';
+            }, 300);
+        }, 5000); // 5 seconds flip as requested by the user
+
+        // FAQ Toggles
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
