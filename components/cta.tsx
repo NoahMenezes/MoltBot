@@ -15,7 +15,7 @@ export default function CTASection() {
                 </p>
                 <Button asChild size="lg" className="rounded-xl px-10 py-6 text-lg shadow-lg shadow-primary/25">
                     <Link href="#">
-                        <span className="font-semibold">Book a Discovery Call</span>
+                        <span className="font-semibold">Book a Call</span>
                         <ArrowRight className="ml-2 size-5" />
                     </Link>
                 </Button>

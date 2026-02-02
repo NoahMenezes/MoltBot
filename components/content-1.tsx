@@ -1,5 +1,5 @@
 import { Card } from '@/components/ui/card'
-import { CheckCircle2, XCircle, ShieldCheck, Key } from 'lucide-react'
+import { XCircle, ShieldCheck } from 'lucide-react'
 
 export default function ContentSection() {
     return (
@@ -50,45 +50,6 @@ export default function ContentSection() {
                 </div>
 
                 {/* What you don't need to worry about + What you control */}
-                <div className="mt-24 grid gap-12 lg:grid-cols-2">
-                    <Card className="p-8 border-border/50 bg-background/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-primary/20 group">
-                        <div className="flex items-center gap-3 mb-6">
-                            <ShieldCheck className="size-8 text-primary" />
-                            <h3 className="text-xl font-semibold">What you don&apos;t need to worry about</h3>
-                        </div>
-                        <ul className="space-y-3">
-                            {[
-                                'No lock-in platform',
-                                'No forced AI billing',
-                                'No "figure it out yourself" docs'
-                            ].map((item, i) => (
-                                <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                                    <CheckCircle2 className="size-4 shrink-0 text-emerald-500" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </Card>
-
-                    <Card className="p-8 border-border/50 bg-background/30 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:border-primary/20 group">
-                        <div className="flex items-center gap-3 mb-6">
-                            <Key className="size-8 text-primary" />
-                            <h3 className="text-xl font-semibold">You control</h3>
-                        </div>
-                        <ul className="space-y-3">
-                            {[
-                                'Your AI keys',
-                                'Your instance and data boundaries',
-                                'What the bot is allowed to do'
-                            ].map((item, i) => (
-                                <li key={i} className="flex items-center gap-3 text-muted-foreground">
-                                    <CheckCircle2 className="size-4 shrink-0 text-emerald-500" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </Card>
-                </div>
             </div>
         </section>
     )

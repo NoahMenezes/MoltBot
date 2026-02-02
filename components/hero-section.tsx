@@ -8,9 +8,9 @@ import Image from 'next/image'
 import { TextEffect } from '@/components/ui/text-effect'
 import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
-import LogoCloud from './logo-cloud'
 import { AnimatePresence, motion } from 'motion/react'
 import { TextAnimate } from "@/components/ui/text-animate"
+import LogoCloud from './logo-cloud'
 
 
 

@@ -47,7 +47,7 @@ const features = [
     {
         icon: Clock,
         title: "Fast setup",
-        subtitle: "24-72 hours typical",
+        subtitle: "24–72 hours typical",
         description: "No weeks of configuration. We get your virtual employee deployed, connected, and ready to work within days, not months."
     },
     {
