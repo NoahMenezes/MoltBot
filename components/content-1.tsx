@@ -34,7 +34,7 @@ export default function ContentSection() {
                             So instead of spending nights debugging &quot;why it stopped replying&quot;, you get a virtual employee that stays online—with people to call when things get messy.
                         </p>
                         <p className="mt-4 text-muted-foreground italic text-sm">
-                            We move fast, customize freely, and don&apos;t force you into a rigid template.
+                            we move fast, customize freely, and don&apos;t force you into a rigid template.
                         </p>
                         
                         <div className="mt-8 pt-8 border-t border-border/50">

@@ -16,7 +16,7 @@ export default function ProcessSection() {
                         <ul className="text-sm text-muted-foreground space-y-2 group-hover:text-foreground/80 transition-colors duration-300">
                             <li>• Provision a VM based on your workload</li>
                             <li>• Deploy OpenClaw/Moltbot/Clawdbot in a clean, maintainable setup</li>
-                            <li>• Customise the functionality and setup according to your choice</li>
+                            <li>• Customise the functionality and setup according to your choice.</li>
                             <li>• Configure stability defaults from day one</li>
                         </ul>
                     </div>

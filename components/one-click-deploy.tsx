@@ -39,8 +39,8 @@ const platforms: Platform[] = [
         name: "Hostinger",
         logo: <HostingerLogo />,
         features: [
-            "Docker-based one-click deployment via VPS marketplace",
-            "Pre-installed Docker with Moltbot and easy UI for environment variables",
+            "Docker-based one-click deployment via VPS marketplace (often called \"OpenClaw\" or \"Clawdbot AI Assistant\")",
+            "Pre-installed Docker with Moltbot and an easy UI for entering environment variables (Claude/OpenAI API key, gateway token, etc.)",
             "VPS example: 2 vCPU, 8GB RAM, 100GB SSD — ~$6.99/mo"
         ]
     },
@@ -49,26 +49,23 @@ const platforms: Platform[] = [
         logo: <DigitalOceanLogo />,
         features: [
             "Launches Moltbot in a Docker container with firewall, logging, and token auth preconfigured",
-            "Designed for quick spin-up of a production-ready bot",
-            "No manual Docker setup needed"
+            "Designed for quick spin-up of a production-ready bot (no manual Docker setup needed)"
         ]
     },
     {
         name: "Cloudflare Workers",
         logo: <CloudflareLogo />,
         features: [
-            "\"Deploy to Cloudflare\" flow using wrangler CLI and GitHub template",
-            "Run Moltbot fully serverless in Workers + Browser Rendering sandbox",
-            "Moltworker project available"
+            "Not one-click in the traditional sense, but offers a \"Deploy to Cloudflare\" flow using their wrangler CLI and GitHub template",
+            "You can run Moltbot fully serverless in their Workers + Browser Rendering sandbox (Moltworker project)"
         ]
     },
     {
         name: "LumaDock & LightNode",
         logo: <LightNodeLogo />,
         features: [
-            "Template picker at VPS launch with networking/firewall preconfigured",
-            "LightNode's OpenClaw VPS with preset configs",
-            "Global region choice available"
+            "Smaller VPS providers like LumaDock offer a template picker at VPS launch that sets up Moltbot automatically with networking/firewall preconfigured",
+            "LightNode's OpenClaw VPS similarly simplifies deployment with preset configs and global region choice"
         ]
     }
 ]
@@ -80,7 +77,7 @@ export default function OneClickDeploySection() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-semibold md:text-4xl text-foreground">One-Click Deploy / Templates</h2>
                     <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
-                        Simplify deployment for non-technical users via templates or guided install flows.
+                        <strong>Goal:</strong> Simplify deployment for non-technical users via templates or guided install flows.
                     </p>
                 </div>
 

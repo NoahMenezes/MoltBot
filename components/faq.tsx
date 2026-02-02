@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 const faqs = [
     {
         question: "Is this official OpenClaw/Moltbot hosting?",
-        answer: "No. Wibble Labs provides managed hosting + setup as an agency service. We ensure your agents run on professional-grade infrastructure."
+        answer: "No. Wibble Labs provides managed hosting + setup as an agency service."
     },
     {
         question: "Do you provide AI usage / tokens?",
