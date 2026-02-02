@@ -11,16 +11,16 @@ export default function ContentSection() {
                         <h2 className="text-3xl font-semibold md:text-4xl text-foreground">Why choose us?</h2>
                         <p className="mt-4 text-muted-foreground text-lg">
                             Because OpenClaw isn&apos;t the hard part. <strong className="text-foreground">Reliability is.</strong><br />
-                            Most DIY setups fail for boring reasons that eat your time.
+                            Most setups fail for boring reasons:
                         </p>
                         <ul className="mt-8 space-y-4">
                             {[
-                                'Session drops & login loops',
-                                'Updates break custom configs',
-                                'Heavy tasks kill the server',
-                                'No alerts, no logs, no recovery plan'
+                                'session drops',
+                                'updates break configs',
+                                'heavy tasks kill the server',
+                                'no alerts, no logs, no recovery plan'
                             ].map((item, i) => (
-                                <li key={i} className="flex items-center gap-3 text-red-500 font-medium">
+                                <li key={i} className="flex items-center gap-3 text-red-500/80 font-medium">
                                     <XCircle className="size-5 shrink-0" />
                                     <span>{item}</span>
                                 </li>
@@ -31,23 +31,21 @@ export default function ContentSection() {
                     <Card className="p-8 lg:p-12 border-primary/20 bg-background/50 backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10">
                         <h3 className="text-2xl font-semibold">We&apos;ve already fought those battles.</h3>
                         <p className="mt-4 text-muted-foreground">
-                            Instead of spending nights debugging &quot;why it stopped replying&quot;, you get a virtual employee that stays online—with humans to call when things get messy.
+                            So instead of spending nights debugging &quot;why it stopped replying&quot;, you get a virtual employee that stays online—with people to call when things get messy.
                         </p>
-                        <p className="mt-4 text-muted-foreground">
+                        <p className="mt-4 text-muted-foreground italic text-sm">
                             We move fast, customize freely, and don&apos;t force you into a rigid template.
                         </p>
-                        <ul className="mt-8 space-y-4">
-                            {[
-                                'Hardened infra tested at scale',
-                                'Proactive stability defaults',
-                                'Humans available for support'
-                            ].map((item, i) => (
-                                <li key={i} className="flex items-center gap-3 text-emerald-500 font-medium">
-                                    <CheckCircle2 className="size-5 shrink-0" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
+                        
+                        <div className="mt-8 pt-8 border-t border-border/50">
+                            <h4 className="font-semibold text-primary mb-4 flex items-center gap-2">
+                                <ShieldCheck className="size-5" />
+                                Simplified Deployment Options
+                            </h4>
+                            <p className="text-sm text-muted-foreground">
+                                For those who want more control, we offer one-click templates via Hostinger (Docker marketplace), DigitalOcean 1-Click Droplets, and Cloudflare Workers.
+                            </p>
+                        </div>
                     </Card>
                 </div>
 

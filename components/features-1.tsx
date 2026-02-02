@@ -7,81 +7,102 @@ export default function Features() {
         <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
             <div className="@container mx-auto max-w-6xl px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">What you’re actually getting</h2>
-                    <p className="mt-4 text-muted-foreground text-lg">Beyond simple code. We provide the stability layer your business agents need.</p>
+                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Proof and trust</h2>
+                    <p className="mt-4 text-muted-foreground text-lg">Reliability isn't a feature, it's the product.</p>
                 </div>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Zap className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Managed VM Hosting</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">We deploy and maintain the entire instance. No more local machine dependencies or terminal errors.</p>
-                        </CardContent>
-                    </Card>
 
-                    <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Settings2 className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Monitoring + Auto-restart</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">Our infrastructure watches your bot 24/7. If it hangs or crashes, we restart it before you even notice.</p>
-                        </CardContent>
-                    </Card>
+                <div className="mb-20">
+                    <h3 className="text-2xl font-semibold mb-8 border-l-4 border-primary pl-4">What you’re actually getting</h3>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
+                            <CardHeader className="pb-3">
+                                <CardDecorator>
+                                    <Zap className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                                </CardDecorator>
+                                <h4 className="mt-6 font-medium">Managed VM Hosting</h4>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">We deploy + maintain the instance. No local setup required.</p>
+                            </CardContent>
+                        </Card>
 
-                    <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Sparkles className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Backups + Logs</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">Centralized logs for every interaction and automated snapshotting so recovery is always 5 minutes away.</p>
-                        </CardContent>
-                    </Card>
+                        <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
+                            <CardHeader className="pb-3">
+                                <CardDecorator>
+                                    <Settings2 className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                                </CardDecorator>
+                                <h4 className="mt-6 font-medium">Monitoring + Auto-restart</h4>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">Prevents silent downtime. If it drops, it comes back in seconds.</p>
+                            </CardContent>
+                        </Card>
 
-                    <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Zap className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Safe Update Flow</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">We test upstream changes before pulling. No more random breaking updates that kill your workflow.</p>
-                        </CardContent>
-                    </Card>
+                        <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
+                            <CardHeader className="pb-3">
+                                <CardDecorator>
+                                    <Sparkles className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                                </CardDecorator>
+                                <h4 className="mt-6 font-medium">Backups + Logs</h4>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">Full audit trail and daily snapshots so recovery is quick.</p>
+                            </CardContent>
+                        </Card>
 
-                    <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Settings2 className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Bring Your Own Keys</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">You control the intelligence. Plug in your OpenAI or Anthropic keys. Zero platform lock-in.</p>
-                        </CardContent>
-                    </Card>
+                        <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
+                            <CardHeader className="pb-3">
+                                <CardDecorator>
+                                    <Zap className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                                </CardDecorator>
+                                <h4 className="mt-6 font-medium">Safe Update Flow</h4>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">We avoid random breaks by testing upstream updates first.</p>
+                            </CardContent>
+                        </Card>
 
-                    <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Sparkles className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Multi-Channel Support</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">Connect your employee to WhatsApp, Telegram, Slack, or Discord with a few clicks.</p>
-                        </CardContent>
-                    </Card>
+                        <Card className="group shadow-zinc-950/5 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-primary/10 hover:border-primary/30 cursor-default">
+                            <CardHeader className="pb-3">
+                                <CardDecorator>
+                                    <Settings2 className="size-6 transition-transform duration-300 group-hover:scale-110" aria-hidden />
+                                </CardDecorator>
+                                <h4 className="mt-6 font-medium">Best-effort Support</h4>
+                            </CardHeader>
+                            <CardContent>
+                                <p className="text-sm text-muted-foreground group-hover:text-foreground/70 transition-colors duration-300">We're here when upstream platforms change things unexpectedly.</p>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12">
+                    <div className="bg-muted/50 rounded-2xl p-8 border border-border/50">
+                        <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+                             What you don't need to worry about
+                        </h3>
+                        <ul className="space-y-4">
+                            {['No lock-in platform', 'No forced AI billing', 'No "figure it out yourself" docs'].map((item) => (
+                                <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                                    <span className="size-1.5 rounded-full bg-primary" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="bg-muted/50 rounded-2xl p-8 border border-border/50">
+                        <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+                             You control
+                        </h3>
+                        <ul className="space-y-4">
+                            {['Your AI keys', 'Your instance and data boundaries', 'What the bot is allowed to do'].map((item) => (
+                                <li key={item} className="flex items-center gap-3 text-muted-foreground">
+                                    <span className="size-1.5 rounded-full bg-primary" />
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

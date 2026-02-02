@@ -2,24 +2,21 @@ import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ProgressiveBlur } from '@/components/ui/progressive-blur'
 
 const logos = [
-    { name: 'WhatsApp', src: 'https://cdn.simpleicons.org/whatsapp' },
-    { name: 'Telegram', src: 'https://cdn.simpleicons.org/telegram' },
-    { name: 'Slack', src: 'https://cdn.simpleicons.org/slack' },
-    { name: 'Discord', src: 'https://cdn.simpleicons.org/discord' },
-    { name: 'iMessage', src: 'https://cdn.simpleicons.org/imessage' },
-    { name: 'Anthropic', src: 'https://cdn.simpleicons.org/anthropic' },
-    { name: 'OpenAI', src: 'https://html.tailus.io/blocks/customers/openai.svg' },
-    { name: 'Google Gemini', src: 'https://cdn.simpleicons.org/googlegemini' },
-    { name: 'DigitalOcean', src: 'https://cdn.simpleicons.org/digitalocean' },
-    { name: 'Cloudflare', src: 'https://cdn.simpleicons.org/cloudflare' },
-    { name: 'Hostinger', src: 'https://cdn.simpleicons.org/hostinger' },
-    { name: 'Docker', src: 'https://cdn.simpleicons.org/docker' },
-    { name: 'Google Workspace', src: 'https://cdn.simpleicons.org/googleworkspace' },
-    { name: 'GitHub', src: 'https://html.tailus.io/blocks/customers/github.svg' },
-    { name: 'Cursor', src: 'https://cdn.simpleicons.org/cursor' },
-    { name: 'Stripe', src: 'https://cdn.simpleicons.org/stripe' },
-    { name: 'Nvidia', src: 'https://html.tailus.io/blocks/customers/nvidia.svg' },
-    { name: 'Lemon Squeezy', src: 'https://html.tailus.io/blocks/customers/lemonsqueezy.svg' },
+    { name: 'WhatsApp', slug: 'whatsapp' },
+    { name: 'Telegram', slug: 'telegram' },
+    { name: 'Slack', slug: 'slack' },
+    { name: 'Discord', slug: 'discord' },
+    { name: 'Anthropic', slug: 'anthropic' },
+    { name: 'OpenAI', slug: 'openai' },
+    { name: 'Google Gemini', slug: 'googlegemini' },
+    { name: 'DigitalOcean', slug: 'digitalocean' },
+    { name: 'Cloudflare', slug: 'cloudflare' },
+    { name: 'Hostinger', slug: 'hostinger' },
+    { name: 'Docker', slug: 'docker' },
+    { name: 'Google Workspace', slug: 'googleworkspace' },
+    { name: 'GitHub', slug: 'github' },
+    { name: 'Stripe', slug: 'stripe' },
+    { name: 'Nvidia', slug: 'nvidia' },
 ]
 
 export default function LogoCloud() {
@@ -35,10 +32,10 @@ export default function LogoCloud() {
                             {logos.map((logo) => (
                                 <div key={logo.name} className="flex items-center justify-center">
                                     <img
-                                        className="mx-auto h-8 w-fit brightness-0 dark:invert"
-                                        src={logo.src}
+                                        className="mx-auto h-10 w-fit dark:invert grayscale brightness-50"
+                                        src={`https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/${logo.slug}.svg`}
                                         alt={`${logo.name} Logo`}
-                                        height="32"
+                                        height="40"
                                         width="auto"
                                     />
                                 </div>

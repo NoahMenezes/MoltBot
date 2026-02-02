@@ -20,7 +20,7 @@ export default function CTASection() {
                     </Link>
                 </Button>
                 <p className="mt-6 text-sm text-muted-foreground">
-                    We'll map your needs → recommend a setup → send a quote.
+                    We&apos;ll map your needs → recommend a setup → send a quote.
                 </p>
             </div>
         </section>

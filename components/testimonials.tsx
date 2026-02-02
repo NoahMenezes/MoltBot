@@ -38,72 +38,72 @@ const testimonials = [
 // Tweet-style cards data
 const tweets = [
     {
-        name: "Dillion",
-        handle: "@dillionverma",
-        content: "today is my first day of @_buildspace school 🎒\n\na place where you turn your ideas into reality and make friends along the way 😊",
+        name: "Founder",
+        handle: "@founder",
+        content: "“We wanted OpenClaw, not a DevOps side-quest. This just worked.”",
         likes: 24,
-        date: "Jul 3, 2023"
+        date: "Feb 2, 2024"
     },
     {
-        name: "Dillion",
-        handle: "@dillionverma",
-        content: "it took an insane amount of effort to go from nothing to this in 2 weeks lmao\n\ni hope yall like it 👀\n\nWhat components do you want to see next?",
+        name: "Ops / Admin",
+        handle: "@ops_admin",
+        content: "“The monitoring + quick fixes mattered more than the bot itself.”",
         likes: 156,
-        date: "Jul 3, 2023"
+        date: "Feb 1, 2024"
     },
     {
-        name: "Farza",
-        handle: "@FarzaTV",
-        content: "Today, we're opening our first @_buildspace campus.\n\nA physical school for you to go all-in on your ideas.\n\nNo matter how big, or how small.",
+        name: "Growth / RevOps",
+        handle: "@growth",
+        content: "“We run automations without the whole system collapsing.”",
         likes: 892,
-        date: "Jun 28, 2023"
+        date: "Jan 28, 2024"
     },
     {
-        name: "Alex Chen",
-        handle: "@alexchen_dev",
-        content: "Just deployed my first OpenClaw agent with @moltbot_io\n\nSetup took 30 mins. Would have taken me weeks to figure out the infra myself. 🚀",
+        name: "Founder",
+        handle: "@founder",
+        content: "“We wanted OpenClaw, not a DevOps side-quest. This just worked.”",
         likes: 47,
         date: "Jan 15, 2024"
     },
     {
-        name: "Sarah K.",
-        handle: "@sarahk_ops",
-        content: "The monitoring dashboard alone is worth it. Caught 3 potential downtime incidents before they happened.\n\nThis is what \"proactive support\" actually looks like.",
+        name: "Ops / Admin",
+        handle: "@ops_admin",
+        content: "“The monitoring + quick fixes mattered more than the bot itself.”",
         likes: 89,
         date: "Jan 22, 2024"
     },
     {
-        name: "Mike Rodriguez",
-        handle: "@mikerodriguez",
-        content: "Moved from self-hosted to @moltbot_io managed.\n\nMy weekends are mine again. No more SSH sessions at 2am. 🙏",
+        name: "Growth / RevOps",
+        handle: "@growth",
+        content: "“We run automations without the whole system collapsing.”",
         likes: 234,
         date: "Feb 1, 2024"
     },
     {
-        name: "Emma Thompson",
-        handle: "@emmathompson_ai",
-        content: "The fact that I can plug in my own API keys and don't have to worry about vendor lock-in? \n\nChef's kiss. 👨‍🍳💋",
+        name: "Founder",
+        handle: "@founder",
+        content: "“We wanted OpenClaw, not a DevOps side-quest. This just worked.”",
         likes: 67,
         date: "Jan 28, 2024"
     },
     {
-        name: "David Park",
-        handle: "@davidpark_tech",
-        content: "Asked for WhatsApp integration. Got it working within 24 hours.\n\nThis team actually delivers. Not just promises.",
+        name: "Ops / Admin",
+        handle: "@ops_admin",
+        content: "“The monitoring + quick fixes mattered more than the bot itself.”",
         likes: 112,
         date: "Jan 30, 2024"
     },
     {
-        name: "Jenny Liu",
-        handle: "@jennyliu_founder",
-        content: "3 months in with @moltbot_io\n\nZero downtime. Zero surprises. Zero regrets.\n\nThis is how hosting should feel.",
+        name: "Growth / RevOps",
+        handle: "@growth",
+        content: "“We run automations without the whole system collapsing.”",
         likes: 189,
         date: "Feb 5, 2024"
     },
     {
-        name: "Ryan Scott",
-        handle: "@ryanscott_cto",
-        content: "Our AI assistant now handles 70% of our customer inquiries.\n\nThe ROI on this setup is insane. 📈",
+        name: "Founder",
+        handle: "@founder",
+        content: "“We wanted OpenClaw, not a DevOps side-quest. This just worked.”",
         likes: 245,
         date: "Feb 8, 2024"
     }
@@ -143,8 +143,8 @@ export default function Testimonials() {
         <section className="py-32 bg-background border-y border-border/50 overflow-hidden">
             <div className="mx-auto max-w-7xl px-6">
                 <div className="text-center mb-20">
-                    <h2 className="text-3xl font-semibold md:text-4xl">Testimonials</h2>
-                    
+                    <h2 className="text-3xl font-semibold md:text-4xl text-foreground">Clients have to say</h2>
+                    <p className="mt-4 text-muted-foreground">Replace with real client quotes as you collect them.</p>
                 </div>
 
                 {/* Tweet Cards Section with Infinite Marquee */}

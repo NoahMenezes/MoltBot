@@ -6,28 +6,24 @@ import { cn } from '@/lib/utils'
 
 const faqs = [
     {
-        question: "Is this official OpenClaw hosting?",
-        answer: "No. We provide managed hosting and expert setup as an agency service. We help you run open-source models at a professional grade."
+        question: "Is this official OpenClaw/Moltbot hosting?",
+        answer: "No. Wibble Labs provides managed hosting + setup as an agency service. We ensure your agents run on professional-grade infrastructure."
     },
     {
-        question: "Do you provide AI tokens?",
-        answer: "No. You bring your own AI keys (Anthropic, OpenAI, etc). This ensures you have full control over your data and prevents vendor lock-in."
-    },
-    {
-        question: "How long does setup take?",
-        answer: "Typically 24–72 hours depending on the complexity of your channels and required custom skill integrations."
-    },
-    {
-        question: "Can I leave later?",
-        answer: "Absolutely. We are anti-lock-in. If you decide to move to your own infra later, we'll help migrate your setup."
+        question: "Do you provide AI usage / tokens?",
+        answer: "No. You bring your own AI keys (OpenAI/Anthropic/etc.). No lock-in. You only pay us for the management and infrastructure."
     },
     {
         question: "Do you support WhatsApp?",
-        answer: "Yes, if WhatsApp is part of your requirement. It's supported as a setup + maintenance service."
+        answer: "Yes, if WhatsApp is part of your requirement. It’s supported as a setup + maintenance service."
     },
     {
         question: "Do you guarantee uptime / SLA?",
-        answer: "No formal SLA. It's best-effort + monitoring, because upstream platforms and providers can change unexpectedly. Our focus is fast recovery and stable setups."
+        answer: "No formal SLA. It’s best-effort + monitoring, because upstream platforms and providers can change unexpectedly. Our focus is fast recovery and stable setups."
+    },
+    {
+        question: "How long does setup take?",
+        answer: "Typically 24–72 hours depending on channels, skills, and integrations."
     },
     {
         question: "Can teams use this or only solo founders?",
@@ -36,6 +32,14 @@ const faqs = [
     {
         question: "Can it do heavy automations / browser tasks?",
         answer: "Yes. For heavy tasks we recommend a separate worker so the main bot stays stable."
+    },
+    {
+        question: "What if I want custom skills or integrations?",
+        answer: "We can build and plug in custom skills as part of the agency service."
+    },
+    {
+        question: "Can I leave later?",
+        answer: "Yes. No lock-in. We can hand over or help migrate your setup."
     }
 ]
 

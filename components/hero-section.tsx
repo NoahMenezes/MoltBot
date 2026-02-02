@@ -10,6 +10,7 @@ import { AnimatedGroup } from '@/components/ui/animated-group'
 import { HeroHeader } from './header'
 import LogoCloud from './logo-cloud'
 import { AnimatePresence, motion } from 'motion/react'
+import { TextAnimate } from "@/components/ui/text-animate"
 
 
 
@@ -122,8 +123,10 @@ export default function HeroSection() {
                                 </AnimatedGroup>
 
                                 <h1 className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                                    Get a Virtual Employee with
-                                    <span className="block text-primary h-[1.2em] overflow-hidden">
+                                    <TextAnimate as="span" by="word">
+                                        Get a Virtual Employee with
+                                    </TextAnimate>
+                                    <span className="block text-primary h-[1.26em] overflow-hidden -mt-2">
                                         <AnimatePresence mode="wait">
                                             <motion.span
                                                 key={botName}
@@ -132,22 +135,27 @@ export default function HeroSection() {
                                                 exit={{ y: -20, opacity: 0 }}
                                                 transition={{ duration: 0.3 }}
                                                 className="block"
-                                            >
+                                                >
                                                 {botName}
                                             </motion.span>
                                         </AnimatePresence>
                                     </span>
                                 </h1>
 
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.5}
-                                    as="p"
-                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground">
-                                    We host it. We connect it. We keep it running. All the power of OpenClaw with zero of the maintenance overhead.
-                                </TextEffect>
+                                <div className="mt-8 flex flex-col gap-2">
+                                    <p className="text-xl font-medium text-foreground">
+                                        We host it. We connect it. We keep it running.
+                                    </p>
+                                    <TextEffect
+                                        per="line"
+                                        preset="fade-in-blur"
+                                        speedSegment={0.3}
+                                        delay={0.5}
+                                        as="p"
+                                        className="mx-auto max-w-2xl text-balance text-lg text-muted-foreground">
+                                        OpenClaw as a virtual employee, VM hosted, channels connected, top skills enabled, monitored, no lock-in, Bring your own AI keys.
+                                    </TextEffect>
+                                </div>
 
                                 <AnimatedGroup
                                     variants={{
@@ -170,13 +178,13 @@ export default function HeroSection() {
                                             size="lg"
                                             className="rounded-xl px-8 text-base shadow-lg shadow-primary/25">
                                             <Link href="#booking">
-                                                <span className="text-nowrap font-semibold">Book a Growth Call</span>
+                                                <span className="text-nowrap font-semibold">Book a Call</span>
                                                 <ArrowRight className="ml-2 size-4" />
                                             </Link>
                                         </Button>
                                     </div>
-                                    <span className="text-sm text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1000 fill-mode-both">
-                                        Tell us your use case. We’ll recommend a setup and share a quote instantly.
+                                    <span className="text-sm text-balance text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1000 fill-mode-both">
+                                        Tell us what you want it to do. We’ll recommend a setup and share a quote.
                                     </span>
                                 </AnimatedGroup>
                             </div>
