@@ -3,7 +3,7 @@ import { CheckCircle2, XCircle, ShieldCheck, Key } from 'lucide-react'
 
 export default function ContentSection() {
     return (
-        <section id="content" className="bg-muted/50 py-16 lg:py-32">
+        <section id="content" className="bg-white dark:bg-muted/50 py-16 lg:py-32">
             <div className="mx-auto max-w-6xl px-6">
                 {/* Main Why Choose Us Grid */}
                 <div className="grid gap-16 lg:grid-cols-2 lg:items-center">

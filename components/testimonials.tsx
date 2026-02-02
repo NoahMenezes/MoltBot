@@ -140,7 +140,7 @@ export default function Testimonials() {
     const row2Tweets = tweets.slice(5, 10)
 
     return (
-        <section className="py-32 bg-background border-y border-border/50 overflow-hidden">
+        <section className="py-32 bg-white dark:bg-background border-y border-border/50 overflow-hidden">
             <div className="mx-auto max-w-7xl px-6">
                 <div className="text-center mb-20">
                     <h2 className="text-3xl font-semibold md:text-4xl text-foreground">Clients have to say</h2>

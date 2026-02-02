@@ -100,93 +100,110 @@ export default function HeroSection() {
                             className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
                         />
 
-                        <div className="mx-auto max-w-7xl px-6">
-                            <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                                <AnimatedGroup variants={transitionVariants}>
-                                    <Link
-                                        href="#booking"
-                                        className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-                                        <span className="text-foreground text-sm">Next-Gen Agent Infrastructure</span>
-                                        <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
+                        <div className="mx-auto max-w-7xl px-6 relative">
+                            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                                <div className="flex-1 text-center lg:text-left flex flex-col items-center lg:items-start lg:mt-0">
+                                    <AnimatedGroup variants={transitionVariants}>
+                                        <Link
+                                            href="#booking"
+                                            className="hover:bg-background dark:hover:border-t-border bg-muted group flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
+                                            <span className="text-foreground text-sm">Next-Gen Agent Infrastructure</span>
+                                            <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
 
-                                        <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-                                            <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                                                <span className="flex size-6">
-                                                    <ArrowRight className="m-auto size-3" />
-                                                </span>
-                                                <span className="flex size-6">
-                                                    <ArrowRight className="m-auto size-3" />
-                                                </span>
+                                            <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
+                                                <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+                                                    <span className="flex size-6">
+                                                        <ArrowRight className="m-auto size-3" />
+                                                    </span>
+                                                    <span className="flex size-6">
+                                                        <ArrowRight className="m-auto size-3" />
+                                                    </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </Link>
-                                </AnimatedGroup>
+                                        </Link>
+                                    </AnimatedGroup>
 
-                                <h1 className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                                    <TextAnimate as="span" by="word">
-                                        Get a Virtual Employee with
-                                    </TextAnimate>
-                                    <span className="block text-primary h-[1.26em] overflow-hidden -mt-2">
-                                        <AnimatePresence mode="wait">
-                                            <motion.span
-                                                key={botName}
-                                                initial={{ y: 20, opacity: 0 }}
-                                                animate={{ y: 0, opacity: 1 }}
-                                                exit={{ y: -20, opacity: 0 }}
-                                                transition={{ duration: 0.3 }}
-                                                className="block"
+                                    <h1 className="mt-8 max-w-4xl text-balance text-5xl font-bold tracking-tight md:text-7xl lg:mt-12 xl:text-[5rem]">
+                                        <TextAnimate as="span" by="word">
+                                            Get a Virtual Employee with
+                                        </TextAnimate>
+                                        <span className="block text-primary h-[1.26em] overflow-hidden -mt-2">
+                                            <AnimatePresence mode="wait">
+                                                <motion.span
+                                                    key={botName}
+                                                    initial={{ y: 20, opacity: 0 }}
+                                                    animate={{ y: 0, opacity: 1 }}
+                                                    exit={{ y: -20, opacity: 0 }}
+                                                    transition={{ duration: 0.3 }}
+                                                    className="block"
                                                 >
-                                                {botName}
-                                            </motion.span>
-                                        </AnimatePresence>
-                                    </span>
-                                </h1>
+                                                    {botName}
+                                                </motion.span>
+                                            </AnimatePresence>
+                                        </span>
+                                    </h1>
 
-                                <div className="mt-8 flex flex-col gap-2">
-                                    <p className="text-xl font-medium text-foreground">
-                                        We host it. We connect it. We keep it running.
-                                    </p>
-                                    <TextEffect
-                                        per="line"
-                                        preset="fade-in-blur"
-                                        speedSegment={0.3}
-                                        delay={0.5}
-                                        as="p"
-                                        className="mx-auto max-w-2xl text-balance text-lg text-muted-foreground">
-                                        OpenClaw as a virtual employee, VM hosted, channels connected, top skills enabled, monitored, no lock-in, Bring your own AI keys.
-                                    </TextEffect>
-                                </div>
+                                    <div className="mt-8 flex flex-col gap-2">
+                                        <p className="text-xl font-medium text-foreground">
+                                            We host it. We connect it. We keep it running.
+                                        </p>
+                                        <TextEffect
+                                            per="line"
+                                            preset="fade-in-blur"
+                                            speedSegment={0.3}
+                                            delay={0.5}
+                                            as="p"
+                                            className="max-w-2xl text-balance text-lg text-muted-foreground">
+                                            OpenClaw as a virtual employee, VM hosted, channels connected, top skills enabled, monitored, no lock-in, Bring your own AI keys.
+                                        </TextEffect>
+                                    </div>
 
-                                <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
+                                    <AnimatedGroup
+                                        variants={{
+                                            container: {
+                                                visible: {
+                                                    transition: {
+                                                        staggerChildren: 0.05,
+                                                        delayChildren: 0.75,
+                                                    },
                                                 },
                                             },
-                                        },
-                                        ...transitionVariants,
-                                    }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-4">
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-8 text-base shadow-lg shadow-primary/25">
-                                            <Link href="#booking">
-                                                <span className="text-nowrap font-semibold">Book a Call</span>
-                                                <ArrowRight className="ml-2 size-4" />
-                                            </Link>
-                                        </Button>
+                                            ...transitionVariants,
+                                        }}
+                                        className="mt-12 flex flex-col items-center lg:items-start gap-4">
+                                        <div
+                                            key={1}
+                                            className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
+                                            <Button
+                                                asChild
+                                                size="lg"
+                                                className="rounded-xl px-8 text-base shadow-lg shadow-primary/25">
+                                                <Link href="#booking">
+                                                    <span className="text-nowrap font-semibold">Book a Call</span>
+                                                    <ArrowRight className="ml-2 size-4" />
+                                                </Link>
+                                            </Button>
+                                        </div>
+                                        <span className="text-sm text-balance text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1000 fill-mode-both text-center lg:text-left">
+                                            Tell us what you want it to do. We’ll recommend a setup and share a quote.
+                                        </span>
+                                    </AnimatedGroup>
+                                </div>
+
+                                <div className="flex-1 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-8 duration-1000 delay-500 fill-mode-both">
+                                    <div className="relative size-72 md:size-96 lg:size-[35rem] overflow-hidden">
+                                        <video
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className="size-full object-cover scale-[1.35]"
+                                        >
+                                            <source src="/MoltBotVideo.mp4" type="video/mp4" />
+                                            Your browser does not support the video tag.
+                                        </video>
                                     </div>
-                                    <span className="text-sm text-balance text-muted-foreground animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-1000 fill-mode-both">
-                                        Tell us what you want it to do. We’ll recommend a setup and share a quote.
-                                    </span>
-                                </AnimatedGroup>
+                                </div>
                             </div>
                         </div>
 
