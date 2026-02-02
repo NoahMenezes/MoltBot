@@ -3,9 +3,7 @@ import { RootPage, generatePageMetadata } from '@payloadcms/next/views'
 import { ImportMap } from 'payload'
 
 
-const importMap: ImportMap = {
-  // This is typically generated, but for a basic setup we can start simple
-}
+import { importMap } from '../importMap'
 
 type Args = {
   params: Promise<{

@@ -15,6 +15,7 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
+    serverURL: 'http://localhost:3000',
     collections: [Users],
     editor: lexicalEditor({}),
     secret: process.env.PAYLOAD_SECRET || '',

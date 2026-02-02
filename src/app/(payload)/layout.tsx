@@ -1,10 +1,11 @@
+import '@payloadcms/next/css'
 import config from '@/payload.config'
 import { RootLayout } from '@payloadcms/next/layouts'
 import { handleServerFunctions } from './actions'
 import React from 'react'
 import { ImportMap } from 'payload'
 
-const importMap: ImportMap = {}
+import { importMap } from './admin/importMap'
 
 type Args = {
   children: React.ReactNode
