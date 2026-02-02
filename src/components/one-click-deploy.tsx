@@ -75,7 +75,7 @@ export default function OneClickDeploySection() {
         <section className="py-24 bg-white dark:bg-background">
             <div className="mx-auto max-w-6xl px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-semibold md:text-4xl text-foreground">One-Click Deploy / Templates</h2>
+                    <h2 className="text-3xl font-semibold md:text-4xl text-foreground">Deploy anywhere</h2>
                     <p className="mt-4 text-muted-foreground text-lg max-w-2xl mx-auto">
                         <strong>Goal:</strong> Simplify deployment for non-technical users via templates or guided install flows.
                     </p>
