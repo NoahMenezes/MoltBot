@@ -50,8 +50,7 @@ export default function FAQSection() {
         <section className="py-24 bg-white dark:bg-background">
             <div className="mx-auto max-w-3xl px-6">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-semibold md:text-4xl text-foreground">Frequently Asked Questions</h2>
-                    <p>Discover quick and comprehensive answers to common questions about our platform, services, and features.</p>
+                    <h2 className="text-3xl font-semibold md:text-4xl text-foreground">FAQ</h2>
                 </div>
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (

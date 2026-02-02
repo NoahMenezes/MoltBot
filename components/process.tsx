@@ -34,7 +34,7 @@ export default function ProcessSection() {
                     </div>
                     <div className="space-y-3 p-6 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
                         <div className="text-4xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">3</div>
-                        <h3 className="text-xl font-bold">We enable popular skills</h3>
+                        <h3 className="text-xl font-bold">We enable popular skills <span className="font-normal text-muted-foreground">(the "crazy stuff")</span></h3>
                         <p className="text-sm text-muted-foreground mb-2">Based on your use-case, we can enable skills like:</p>
                         <ul className="text-sm text-muted-foreground space-y-2 group-hover:text-foreground/80 transition-colors duration-300">
                             <li>• inbox help (draft, summarize, reply suggestions)</li>
