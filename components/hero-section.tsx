@@ -199,7 +199,7 @@ export default function HeroSection() {
                                             playsInline
                                             className="size-full object-cover scale-[1.35]"
                                         >
-                                            <source src="/MoltBotVideo.mp4" type="video/mp4" />
+                                            <source src="/moltbotvideo.mp4" type="video/mp4" />
                                             Your browser does not support the video tag.
                                         </video>
                                     </div>
