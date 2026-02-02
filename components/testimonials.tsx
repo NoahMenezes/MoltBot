@@ -144,7 +144,7 @@ export default function Testimonials() {
             <div className="mx-auto max-w-7xl px-6">
                 <div className="text-center mb-20">
                     <h2 className="text-3xl font-semibold md:text-4xl text-foreground">Clients have to say</h2>
-                    <p className="mt-4 text-muted-foreground">Replace with real client quotes as you collect them.</p>
+                    <p className="mt-4 text-muted-foreground">(Replace with real client quotes as you collect them.)</p>
                 </div>
 
                 {/* Tweet Cards Section with Infinite Marquee */}

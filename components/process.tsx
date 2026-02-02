@@ -9,9 +9,9 @@ export default function ProcessSection() {
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-semibold md:text-4xl text-foreground">What we exactly do?</h2>
                 </div>
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
-                    <div className="space-y-4 p-8 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
-                        <div className="text-5xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">1</div>
+                <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 items-start">
+                    <div className="space-y-3 p-6 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
+                        <div className="text-4xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">1</div>
                         <h3 className="text-xl font-bold">We deploy your instance</h3>
                         <ul className="text-sm text-muted-foreground space-y-2 group-hover:text-foreground/80 transition-colors duration-300">
                             <li>• Provision a VM based on your workload</li>
@@ -20,8 +20,8 @@ export default function ProcessSection() {
                             <li>• Configure stability defaults from day one</li>
                         </ul>
                     </div>
-                    <div className="space-y-4 p-8 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
-                        <div className="text-5xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">2</div>
+                    <div className="space-y-3 p-6 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
+                        <div className="text-4xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">2</div>
                         <h3 className="text-xl font-bold">We connect your channels</h3>
                         <p className="text-sm text-muted-foreground mb-2">Whatever you need:</p>
                         <ul className="text-sm text-muted-foreground space-y-2 group-hover:text-foreground/80 transition-colors duration-300">
@@ -32,8 +32,8 @@ export default function ProcessSection() {
                             <li>• Webhooks / custom routes</li>
                         </ul>
                     </div>
-                    <div className="space-y-4 p-8 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
-                        <div className="text-5xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">3</div>
+                    <div className="space-y-3 p-6 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
+                        <div className="text-4xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">3</div>
                         <h3 className="text-xl font-bold">We enable popular skills</h3>
                         <p className="text-sm text-muted-foreground mb-2">Based on your use-case, we can enable skills like:</p>
                         <ul className="text-sm text-muted-foreground space-y-2 group-hover:text-foreground/80 transition-colors duration-300">
@@ -45,8 +45,8 @@ export default function ProcessSection() {
                             <li>• browser-based tasks (optional heavy worker recommended)</li>
                         </ul>
                     </div>
-                    <div className="space-y-4 p-8 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
-                        <div className="text-5xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">4</div>
+                    <div className="space-y-3 p-6 rounded-3xl transition-all duration-300 bg-muted/30 hover:bg-muted/50 border border-border/50 hover:border-primary/30 cursor-default group">
+                        <div className="text-4xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-500">4</div>
                         <h3 className="text-xl font-bold">We monitor + maintain (best-effort)</h3>
                         <ul className="text-sm text-muted-foreground space-y-2 group-hover:text-foreground/80 transition-colors duration-300">
                             <li>• uptime monitoring, auto-restart</li>
